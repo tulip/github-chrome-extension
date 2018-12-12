@@ -1,0 +1,4 @@
+tulip-github-extension.crx
+
+# Just in case someone sticks the pem file in here...
+*.pem

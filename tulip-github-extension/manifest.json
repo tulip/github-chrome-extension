@@ -1,0 +1,13 @@
+{
+  "name": "Tulip Github Customization",
+  "version": "1.0",
+  "description": "Customizes Github for Tulip",
+  "manifest_version": 2,
+  "content_scripts": [
+   {
+     "matches": ["https://github.com/tulip/*"],
+     "css": ["contentStyles.css"],
+     "js": ["contentScript.js"]
+   }
+ ]
+}
