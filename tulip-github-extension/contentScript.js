@@ -24,14 +24,22 @@ function isSquashAndMergeButton(el) {
 
 function getPRTitle() {
   const TITLE_SELECTOR = '.js-issue-title';
+  const PR_NUM_SELECTOR = '.gh-header-number';
 
   const titleEl = document.querySelector(TITLE_SELECTOR);
+  const prNumEl = document.querySelector(PR_NUM_SELECTOR);
 
   if (!titleEl) {
     return '(Could not detect title)';
   }
 
-  return titleEl.innerText.trim();
+  let title = titleEl.innerText.trim();
+
+  if (prNumEl) {
+    title += ' (' + prNumEl.innerText.trim() + ')';
+  }
+
+  return title;
 }
 
 function getPRFirstCommentBodyMarkdown() {
